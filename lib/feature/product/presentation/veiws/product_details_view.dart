@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/products_details_view_body.dart';
 
-
 class ProductDetailsView extends StatelessWidget {
   const ProductDetailsView({super.key});
 

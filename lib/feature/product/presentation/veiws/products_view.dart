@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/products_veiw_body.dart';
 
-
-
 class ProductsView extends StatelessWidget {
   const ProductsView({super.key});
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/product_card.dart';
 
-
 class ProductsVeiwBody extends StatelessWidget {
   const ProductsVeiwBody({super.key});
 

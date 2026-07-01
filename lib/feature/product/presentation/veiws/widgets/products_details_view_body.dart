@@ -5,8 +5,6 @@ import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/prod
 import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/product_price.dart';
 import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/product_rating.dart';
 
-
-
 class ProductsDetailsViewBody extends StatelessWidget {
   const ProductsDetailsViewBody({super.key});
 
