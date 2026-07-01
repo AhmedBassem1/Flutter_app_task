@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_task/feature/product/data/models/product_model/product.dart';
 import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/product_description.dart';
 import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/product_image.dart';
 import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/product_name.dart';
@@ -6,7 +7,9 @@ import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/prod
 import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/product_rating.dart';
 
 class ProductsDetailsViewBody extends StatelessWidget {
-  const ProductsDetailsViewBody({super.key});
+  const ProductsDetailsViewBody({super.key, required this.product});
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +18,15 @@ class ProductsDetailsViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const ProductImage(),
+          ProductImage(product: product),
           const SizedBox(height: 8),
-          const ProductName(),
+          ProductName(product: product),
           const SizedBox(height: 8),
-          const ProductDescription(),
+          ProductDescription(product: product),
           const SizedBox(height: 8),
-          const ProductPrice(),
+          ProductPrice(product: product),
           const SizedBox(height: 8),
-          const ProductRating(),
+          ProductRating(product: product),
         ],
       ),
     );

@@ -1,15 +1,18 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_task/feature/product/data/models/product_model/product.dart';
 
 class ProductImage extends StatelessWidget {
-  const ProductImage({super.key});
-
+  const ProductImage({super.key,  required this.product, });
+ final Product product;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 300,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-      child: Image.asset('assets/images/images.jpeg'),
-    );
+    return CachedNetworkImage(
+            imageUrl: product.thumbnail!,
+            height: 200,
+            width: double.infinity,
+            fit: BoxFit.cover,
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          );
   }
 }

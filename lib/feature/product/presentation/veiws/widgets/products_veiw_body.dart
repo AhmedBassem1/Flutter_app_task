@@ -24,7 +24,7 @@ class ProductsVeiwBody extends StatelessWidget {
               childAspectRatio: 0.7,
             ),
             itemBuilder: (BuildContext context, int index) {
-              return ProductCard();
+              return ProductCard(product: state.products[index],);
             },
           );
         } else if (state is ProductFailureState) {
