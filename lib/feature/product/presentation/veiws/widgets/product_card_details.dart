@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProductCardDetails extends StatelessWidget {
-  const ProductCardDetails({super.key});
+  const ProductCardDetails({super.key,});
+
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +14,13 @@ class ProductCardDetails extends StatelessWidget {
           Container(
             height: 200,
             alignment: Alignment.center,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-            child: Image.asset('assets/images/images.jpeg'),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              image: DecorationImage(
+                image: NetworkImage("https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp"),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           const SizedBox(height: 8),
           const Text(
@@ -26,9 +32,9 @@ class ProductCardDetails extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          const Text(
-            'Nike shoes',
-            style: TextStyle(
+          Text(
+            'product name',
+            style: const TextStyle(
               fontSize: 16,
               color: Color(0xff3C2F2F),
               fontWeight: FontWeight.w700,

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_task/feature/product/data/models/product_model/product_model.dart';
 import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/product_card_details.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  const ProductCard({super.key, });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class ProductCard extends StatelessWidget {
           ),
         ],
       ),
-      child: const ProductCardDetails(),
+      child: ProductCardDetails(),
     );
   }
 }
