@@ -9,7 +9,7 @@ class ProductImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CachedNetworkImage(
             imageUrl: product.thumbnail!,
-            height: 200,
+            height: 400,
             width: double.infinity,
             fit: BoxFit.cover,
             errorWidget: (context, url, error) => const Icon(Icons.error),
