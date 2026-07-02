@@ -15,17 +15,22 @@ class ProductsVeiwBody extends StatelessWidget {
         if (state is ProductLoadingState) {
           return const Center(child: CircularProgressIndicator());
         } else if (state is ProductSuccessState) {
-          return GridView.builder(
-            itemCount: state.products.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-              childAspectRatio: 0.7,
-            ),
-            itemBuilder: (BuildContext context, int index) {
-              return ProductCard(product: state.products[index],);
+          return RefreshIndicator(
+            onRefresh: () { 
+              return context.read<ProductCubit>().getProducts();
             },
+            child: GridView.builder(
+              itemCount: state.products.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
+                childAspectRatio: 0.7,
+              ),
+              itemBuilder: (BuildContext context, int index) {
+                return ProductCard(product: state.products[index],);
+              },
+            ),
           );
         } else if (state is ProductFailureState) {
           return Center(
