@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_task/feature/product/data/models/product_model/product.dart';
 import 'package:flutter_app_task/feature/product/presentation/veiws/widgets/products_details_view_body.dart';
@@ -10,13 +11,10 @@ class ProductDetailsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xffCEA968),
-        title: const Text(
-          'Products',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
-            color: Colors.black,
-          ),
+        title:  Text(
+          "product_details".tr(),
+          style: Theme.of(context).appBarTheme.titleTextStyle,
+
         ),
       ),
       body: ProductsDetailsViewBody(product: product),
