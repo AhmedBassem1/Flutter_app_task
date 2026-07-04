@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,10 @@ void main() async {
       path:
           'assets/translations', // <-- change the path of the translation files
       fallbackLocale: Locale('en', 'US'),
-      child: MyApp(),
+      child:  DevicePreview(
+    enabled: true, // Set to false to disable device preview
+    builder: (context) => MyApp(), // Wrap your app
+  ),
     ),
   );
 }
